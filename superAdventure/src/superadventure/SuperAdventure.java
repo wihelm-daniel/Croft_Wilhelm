@@ -1,7 +1,10 @@
 
 package superadventure;
 
+import byui.cit260.superAdventure.model.Keys;
 import byui.cit260.superAdventure.model.Player;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class SuperAdventure {
@@ -15,6 +18,15 @@ public class SuperAdventure {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        
+        Keys keysOne = new Keys();
+        
+        keysOne.setKeyShape("Circle");
+        String keyInfo = keysOne.toString();
+        
+        System.out.println(keyInfo);
+        
     }
     
 }
