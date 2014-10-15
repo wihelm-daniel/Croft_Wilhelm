@@ -5,9 +5,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 
+//@TODO - This class is describing an item in inventory. 
+//        Inventory is analogous to a warehouse where you store items.
 public class Inventory implements Serializable{
     
     private String item;
+    
+    //@TODO - You might want to add an attribute for description
+    
     private int used;
     private int quantity;
 

@@ -14,7 +14,7 @@ public class Puzzles implements Serializable{
     
     private String question;
     private String answer;
-    private String hints;
+    private String hints; //@TODO - is there more than one hint?
     private String successMessage;
 
      public Puzzles() {

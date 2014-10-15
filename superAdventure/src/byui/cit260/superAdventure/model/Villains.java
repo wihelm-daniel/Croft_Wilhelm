@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Villains implements Serializable{
     
     private int weakness;
-    private String taunts;
+    private String taunts; //@TODO - Is there more than one taunt?
     private String successMessage;
 
     public Villains() {

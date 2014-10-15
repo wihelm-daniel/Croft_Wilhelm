@@ -7,9 +7,11 @@ import java.util.Objects;
 public class Game {
     
     private String nameOfGame;
-    private String numOfMaps;
-    private String roomObjects;
-    private String inventoryItemCount;
+    
+    
+    private String numOfMaps;// @TODO - change to int data type
+    private String roomObjects; // @TODO - change to int data type   
+    private String inventoryItemCount; // @TODO - change to int data type
 
     public Game() {
     }

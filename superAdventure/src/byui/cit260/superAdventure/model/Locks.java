@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Locks implements Serializable{
     
     private String lockShape;
-    private String hints;
+    private String hints; // @TODO - is this really plural. Is there more than one hint?
     private int treasure;
 
      public Locks() {
