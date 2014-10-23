@@ -28,12 +28,12 @@ public class RoomObjectControlTest {
         
         int radius = 1;
         int height = 1;
-        RoomObjectControl instance = new RoomObjectControl();
         int expResult = 1;
-        double result = instance.checkLockCover(radius, height);
+        RoomObjectControl instance = new RoomObjectControl();
+        int result = instance.checkLockCover(radius, height);
+        System.out.println(result);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+               
         
    /*
     *  Test Case #2
@@ -45,8 +45,7 @@ public class RoomObjectControlTest {
         expResult = 536;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
         
    /*
     *  Test Case #3
@@ -58,8 +57,7 @@ public class RoomObjectControlTest {
         expResult = -1;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
         
           
    /*
@@ -72,8 +70,7 @@ public class RoomObjectControlTest {
         expResult = -1;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
         
    /*
     *  Test Case #5
@@ -85,8 +82,7 @@ public class RoomObjectControlTest {
         expResult = 1;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
          /*
     *  Test Case #6
     */
@@ -97,8 +93,7 @@ public class RoomObjectControlTest {
         expResult = 8;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
         
    /*
     *  Test Case #7
@@ -110,8 +105,7 @@ public class RoomObjectControlTest {
         expResult = 536;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
         
    /*
     *  Test Case #8
@@ -123,8 +117,7 @@ public class RoomObjectControlTest {
         expResult = 536;
         result = instance.checkLockCover(radius, height);
         assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
         
     
     }
