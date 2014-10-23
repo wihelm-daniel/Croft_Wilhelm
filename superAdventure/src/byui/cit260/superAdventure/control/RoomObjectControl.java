@@ -22,10 +22,10 @@ public class RoomObjectControl {
         } else if (answer < volumeLow) {
             System.out.println("Volume too low. Sand dumped out.");
 
-            return 0;
+            return answer;
         } else {
-            System.out.println(" Volume too high. Sand dumped out");
-            return 0;
+            System.out.println("Volume too high. Sand dumped out");
+            return answer;
 
         }
     }
