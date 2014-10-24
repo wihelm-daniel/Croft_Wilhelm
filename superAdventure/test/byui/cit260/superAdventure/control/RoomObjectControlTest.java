@@ -26,11 +26,13 @@ public class RoomObjectControlTest {
     */
         System.out.println("\t Test #1");
         
+        int volumeLow = 1;
+        int volumeHigh = 537;
         int radius = 1;
         int height = 1;
         int expResult = 1;
         RoomObjectControl instance = new RoomObjectControl();
-        int result = instance.checkLockCover(radius, height);
+        int result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         System.out.println(result);
         assertEquals(expResult, result, 1);
                
@@ -43,7 +45,7 @@ public class RoomObjectControlTest {
         radius = 8;
         height = 8;
         expResult = 536;
-        result = instance.checkLockCover(radius, height);
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
         
         
@@ -55,7 +57,7 @@ public class RoomObjectControlTest {
         radius = 0;
         height = 0;
         expResult = -1;
-        result = instance.checkLockCover(radius, height);
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
         
         
@@ -68,7 +70,7 @@ public class RoomObjectControlTest {
         radius = 9;
         height = 9;
         expResult = -1;
-        result = instance.checkLockCover(radius, height);
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
        
         
@@ -80,7 +82,7 @@ public class RoomObjectControlTest {
         radius = 1;
         height = 1;
         expResult = 1;
-        result = instance.checkLockCover(radius, height);
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
      
          /*
@@ -91,7 +93,7 @@ public class RoomObjectControlTest {
         radius = 1;
         height = 8;
         expResult = 8;
-        result = instance.checkLockCover(radius, height);
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
         
         
@@ -101,9 +103,9 @@ public class RoomObjectControlTest {
         System.out.println("\t Test #7");
         
         radius = 8;
-        height = 67;
-        expResult = 536;
-        result = instance.checkLockCover(radius, height);
+        height = 1;
+        expResult = 67;
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
         
         
@@ -115,13 +117,94 @@ public class RoomObjectControlTest {
         radius = 8;
         height = 8;
         expResult = 536;
-        result = instance.checkLockCover(radius, height);
+        result = instance.checkLockCover(radius, height, volumeLow, volumeHigh);
         assertEquals(expResult, result, 1);
       
-        
-    
+            
     }
 
-    
+    /**
+     * Test of checkPuzzleAnswer method, of class RoomObjectControl.
+     */
+    @Test
+    public void testCheckPuzzleAnswer() {
+        System.out.println("checkPuzzleAnswer");
+   /*
+    *  Test Case #1
+    */         
+        System.out.println("\t Test Case #1");
+        int radius = 1;
+        int height = 1;
+        int volumeLow = 1;
+        int volumeHigh = 1609;
+        RoomObjectControl instance = new RoomObjectControl();
+        int expResult = 3;
+        int result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #2
+    */ 
+        System.out.println("\t Test Case #2");
+        radius = 8;
+        height = 8;
+        expResult = 1536;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #3
+    */
+        System.out.println("\t Test Case #3");
+        radius = 0;
+        height = 0;
+        expResult = -1;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #4
+    */
+        System.out.println("\t Test Case #4");
+        radius = 9;
+        height = 9;
+        expResult = -1;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #5
+    */
+        System.out.println("\t Test Case #5");
+        radius = 1;
+        height = 1;
+        expResult = 3;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #6
+    */
+        System.out.println("\t Test Case #6");
+        radius = 1;
+        height = 8;
+        expResult = 24;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #7
+    */
+        System.out.println("\t Test Case #7");
+        radius = 8;
+        height = 1;
+        expResult = 192;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+   /*
+    *  Test Case #8
+    */
+        System.out.println("\t Test Case #8");
+        radius = 8;
+        height = 8;
+        expResult = 1536;
+        result = instance.checkPuzzleAnswer(radius, height, volumeLow, volumeHigh);
+        assertEquals(expResult, result);
+       
+    }
     
 }

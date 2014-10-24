@@ -1,23 +1,69 @@
 package byui.cit260.superAdventure.control;
 
 public class RoomObjectControl {
-
-    public int checkLockCover(int radius, int height) {
+    
+    //Check Puzzle Answer funtion by Dan
+    
+public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHigh) {
 
         if (radius < 1) {
             System.out.println("Enter a number between 1.0 and 8.0");
             return -1;
         }
         if (radius > 8) {
-            System.out.println("Enter a number less than 8.0");
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
         }
         
-        int volumeLow = 0; // The other class doesn't exist yet, this is just a temporary holder.
-        int volumeHigh = 537; //The other class doesn't exist yet, this is just a temporary holder.
+        if (height < 1) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        if (height > 8) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        int volume = (int) Math.PI *((int)Math.pow(radius, 2)* height);        
+        
+        if (volume >= volumeLow && volume <= volumeHigh) {
+            return volume;
+
+        } else if (volume < volumeLow) {
+            System.out.println("Volume too low. Try again.");
+
+            return -1;
+        } else {
+            System.out.println(" Volume too high. Try again.");
+            return -1;
+
+        }
+    }
+
+    
+    // Uncover the Lock Function by Dan
+    public int checkLockCover(int radius, int height, int volumeLow, int volumeHigh) {
+
+        if (radius < 1) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        if (radius > 8) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        
+        if (height < 1) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        if (height > 8) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+                
         float power = (float) Math.pow(radius, 2);
         float divisor =  (float) height/3;
         int volume = (int)( Math.PI * power * divisor);
-        System.out.println("volume = " + volume);
         if (volume >= volumeLow && volume <= volumeHigh) {
             return volume;
 
@@ -31,4 +77,7 @@ public class RoomObjectControl {
 
         }
     }
-}
+ 
+ }
+
+
