@@ -213,21 +213,21 @@ public class RoomObjectControlTest {
         int areaHigh = 65;
         RoomObjectControl instance = new RoomObjectControl();
         int expResult = 1;
-        int result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        int result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
 
         //Test case #2
         areaBase = 8;
         areaHeight = 8;
         expResult = 64;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
         //Test case #3
         areaBase = 0;
         areaHeight = 0;
         expResult = -1;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
         
@@ -235,35 +235,35 @@ public class RoomObjectControlTest {
         areaBase = 9;
         areaHeight = 9;
         expResult = -1;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
        //Test case #5
         areaBase = 1;
         areaHeight = 1;
         expResult = 1;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
         //Test case #6
         areaBase = 1;
         areaHeight = 8;
         expResult = 8;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
         //Test case #7
         areaBase = 8;
         areaHeight = 1;
         expResult = 8;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
         //Test case #8
         areaBase = 8;
         areaHeight = 8;
         expResult = 64;
-        result = instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
+        result = (int) instance.unravelClueCheck(areaBase, areaHeight, areaLow, areaHigh);
         assertEquals(expResult, result);
         
         
