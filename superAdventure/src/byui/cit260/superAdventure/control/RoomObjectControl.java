@@ -77,6 +77,49 @@ public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHi
 
         }
     }
+    
+    // This is Brad's work, Unravel Clue check
+    
+     public int unravelClueCheck(int areaBase, int areaHeight, int areaLow, int areaHigh) {
+
+        if (areaBase < 1) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        if (areaBase > 8) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        
+        if (areaHeight < 1) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+        if (areaHeight > 8) {
+            System.out.println("Enter a number between 1.0 and 8.0");
+            return -1;
+        }
+                
+        
+        
+        int areaTotal = areaBase * areaHeight;
+        
+        if (areaTotal >= areaLow && areaTotal <= areaHigh){
+            return  areaTotal;
+        } else if (areaTotal < areaLow){
+            System.out.println("Area too low. Try again");
+            return -1;
+                    
+        } else {
+            System.out.println("Area too high. Try again");
+            return -1;
+        }
+        
+        
+       
+    } // End of Brad's work
+    
+    
  
  }
 
