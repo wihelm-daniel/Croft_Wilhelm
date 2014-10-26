@@ -83,20 +83,20 @@ public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHi
      public int unravelClueCheck(int areaBase, int areaHeight, int areaLow, int areaHigh) {
 
         if (areaBase < 1) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
         if (areaBase > 8) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
         
         if (areaHeight < 1) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
         if (areaHeight > 8) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
                 
