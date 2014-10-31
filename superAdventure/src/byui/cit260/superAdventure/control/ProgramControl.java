@@ -6,6 +6,7 @@
 package byui.cit260.superAdventure.control;
 
 import byui.cit260.superAdventure.model.Player;
+import superadventure.SuperAdventure;
 
 /**
  *
