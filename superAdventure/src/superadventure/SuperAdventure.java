@@ -91,8 +91,13 @@ public class SuperAdventure {
 
     }
 
+    public static void setPlayer(Player player) {
+         System.out.println("\n setPlayer called.");
+    }
+
     public static Player getPlayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("\n getPlayer called."); 
+         return null;
     }
 
     }
