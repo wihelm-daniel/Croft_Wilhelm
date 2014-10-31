@@ -14,9 +14,33 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SuperAdventure {
+    
+    private static  Game currentGame = null;
+    private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        SuperAdventure.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        SuperAdventure.player = player;
+    }
 
     public static void main(String[] args) {
-
+        
+        
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
+/*
         //Dan
         Player playerOne = new Player();
         playerOne.setName("Fred Flinstone");
