@@ -9,6 +9,7 @@ import byui.cit260.superAdventure.model.Player;
 import byui.cit260.superAdventure.model.Puzzles;
 import byui.cit260.superAdventure.model.RoomObject;
 import byui.cit260.superAdventure.model.Villains;
+import byui.cit260.superAdventure.view.StartProgramView;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -88,6 +89,11 @@ public class SuperAdventure {
         gameClass.setInventoryItemCount("Each player can have various amounts of inventory that they carry");
         String gameDetails = gameClass.toString();
         System.out.println(gameDetails);
+        
+        //Dan
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
+    
 
     }
 
