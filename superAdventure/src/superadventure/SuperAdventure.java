@@ -10,8 +10,6 @@ import byui.cit260.superAdventure.model.Puzzles;
 import byui.cit260.superAdventure.model.RoomObject;
 import byui.cit260.superAdventure.model.Villains;
 import byui.cit260.superAdventure.view.StartProgramView;
-import java.util.HashSet;
-import java.util.Set;
 
 public class SuperAdventure {
     
@@ -40,7 +38,7 @@ public class SuperAdventure {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
-/*
+
         //Dan
         Player playerOne = new Player();
         playerOne.setName("Fred Flinstone");
@@ -114,20 +112,5 @@ public class SuperAdventure {
         String gameDetails = gameClass.toString();
         System.out.println(gameDetails);
         
-        //Dan
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
-    
-
     }
-
-    public static void setPlayer(Player player) {
-         System.out.println("\n setPlayer called.");
-    }
-
-    public static Player getPlayer() {
-         System.out.println("\n getPlayer called."); 
-         return null;
-    }
-
-    }
+}
