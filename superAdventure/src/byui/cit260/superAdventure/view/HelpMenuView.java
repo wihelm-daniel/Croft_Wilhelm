@@ -95,7 +95,9 @@ public class HelpMenuView {
     }
 
     private void gamePlayHelpView() {
-        System.out.println("\n gamePlayHelpView called");
+        GamePlayHelpView gamePlayHelp = new GamePlayHelpView();
+        gamePlayHelp.displayMenu();
+        
     }
 
     private void puzzleHelpView() {
@@ -115,10 +117,7 @@ public class HelpMenuView {
     }
 
     private void clueHelpView() {
-        ClueView clue = new ClueView();
-        clue.displayMenu();
-
-//System.out.println("\n clueHelpView called");
+        System.out.println("\n clueHelpView called");
     }
 
     private void keyHelpView() {
