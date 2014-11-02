@@ -6,21 +6,23 @@
 package byui.cit260.superAdventure.view;
 
 import java.util.Scanner;
+
 /**
  *
  * @author Daniel
  */
-public class GameMenuView {
-    private final String MENU = "\n" +
+public class GamePlayHelpView {
+      
+        private final String MENU = "\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
-            "\n+              Game Menu               +" +
+            "\n+       Game Play Help Categories      +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
-            "\n+ L - Look at an object                +" +
-            "\n+ X - Exit Room                        +" + 
-            "\n+ I - Inventory                        +" +
-            "\n+ M - View Map                         +" +
-            "\n+ S - Save game and continue playing   +" +
-            "\n+ Q - Quit to Main Menu                +" +
+            "\n+ O - Object of the game               +" +
+            "\n+ H - Hints on how to win              +" + 
+            "\n+ S - Saving the game                  +" +
+            "\n+ L - Loading a saved game             +" +
+            "\n+ T - Treasure (clues/keys/powers)     +" +
+            "\n+ Q - Quit to Help Menu                +" +
             "\n++++++++++++++++++++++++++++++++++++++++";
    
     void displayMenu() {
@@ -60,19 +62,19 @@ public class GameMenuView {
     private void doAction(char choice) {
         
         switch (choice){
-            case 'L':
-                this.lookAtObject();
+            case 'O':
+                this.gameObject();
                 break;
-            case 'X':
-                this.exitRoom();
-            case 'I':
-                this.listInventory();
-                break;
-            case 'M':
-                this.viewMap();
-                break;
+            case 'H':
+                this.howToWin();
             case 'S':
-                this.saveProgress();
+                this.howToSave();
+                break;
+            case 'L':
+                this.loadSave();
+                break;
+            case 'T':
+                this.treasureUse();
                 break;
             case 'Q':
                 return;
@@ -80,31 +82,26 @@ public class GameMenuView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
     }
-}
-
-    private void lookAtObject() {
-        System.out.println("\n lookAtObject called");
     }
-    
-    private void listInventory() {
-         System.out.println("\n listInventory called");
+
+    private void gameObject() {
+        System.out.println("\n gameObject called");
+    }
+
+    private void howToWin() {
+        System.out.println("\n howToWin called");
+    }
+
+    private void howToSave() {
+        System.out.println("\n howToSave called");
+    }
+
+    private void loadSave() {
+        System.out.println("\n loadSave called");
+    }
+
+    private void treasureUse() {
+        System.out.println("\n treaasureUse called");
     }
    
-    private void exitRoom() {
-        System.out.println("\n exitRoom called");
-    }
-   
-
-    private void viewMap() {
-        MapView mapMenu = new MapView();
-        mapMenu.displayMenu();
-        //System.out.println("\n viewMap called");
-    }
-
-    private void saveProgress() {
-       System.out.println("\n saveProgress called");
-    }
-
 }
-
-

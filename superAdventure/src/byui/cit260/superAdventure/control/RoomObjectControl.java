@@ -7,34 +7,35 @@ public class RoomObjectControl {
 public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHigh) {
 
         if (radius < 1) {
-            System.out.println("Enter a number between 1.0 and 8.0");
-            return -1;
+            System.out.println("Enter a number between 1 and 8");
+            return 1;
         }
         if (radius > 8) {
-            System.out.println("Enter a number between 1.0 and 8.0");
-            return -1;
+            System.out.println("Enter a number between 1 and 8");
+            return 1;
         }
         
         if (height < 1) {
-            System.out.println("Enter a number between 1.0 and 8.0");
-            return -1;
+            System.out.println("Enter a number between 1 and 8");
+            return 1;
         }
         if (height > 8) {
             System.out.println("Enter a number between 1.0 and 8.0");
-            return -1;
+            return 1;
         }
         int volume = (int) Math.PI *((int)Math.pow(radius, 2)* height);        
         
         if (volume >= volumeLow && volume <= volumeHigh) {
-            return volume;
+            System.out.println("Correct! You're so awesome!");
+            return 0;
 
         } else if (volume < volumeLow) {
             System.out.println("Volume too low. Try again.");
 
-            return -1;
+            return 1;
         } else {
             System.out.println(" Volume too high. Try again.");
-            return -1;
+            return 1;
 
         }
     }
