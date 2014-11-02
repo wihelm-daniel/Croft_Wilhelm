@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.superAdventure.view;
-import byui.cit260.superAdventure.control.PuzzleControl;
 import java.util.Scanner;
 
 /**
@@ -28,28 +27,30 @@ public class PuzzleView {
             "\n= Your mission is to build a bucket the correct size...      =";
             
   void displayText() {
-         
+again:
          System.out.println(TEXT);
-         System.out.println("Please enter the radius of the bucket (1-8");
-         int radius = this.getInput();
-         int height = this.getInput();
-         
+         System.out.println("Are you ready to give it a try?" +
+                 "\n press Y for yes, N for no or X to reurnt to the Help Menu");
+         char choice = ' ';
+         String input = this.getInput();
+            choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y') {
+            this.doAction();
+        } else if (choice == 'N' || choice == 'n'){
+            this.displayText();
+        } else {
+            // will return to function that called it
+        }
         
-              
-           
-       
-       }
-       
-       
-    
+    }
 
-    private int getInput() {
+    private String getInput() {
         boolean valid = false;
-        String input = "0";
+        String input = null;
         Scanner keyboard = new Scanner(System.in);
         
         while(!valid){
-            System.out.println("Enter your menu choice.");
+            System.out.println("Enter your choice.");
             input = keyboard.nextLine();
             input = input.trim();
             
@@ -59,9 +60,19 @@ public class PuzzleView {
                 }
             break;
         }
-        int output = Integer.valueOf(input);
-        return output;
-    }  
+        
+        return input;
+    }
+
+    private void doAction() {
+        System.out.println("doAction called");
+    }
+
+}
+       
+       
+    
 
    
-}
+
+
