@@ -95,7 +95,9 @@ public class HelpMenuView {
     }
 
     private void gamePlayHelpView() {
-        System.out.println("\n gamePlayHelpView called");
+        GamePlayHelpView gamePlayHelp = new GamePlayHelpView();
+        gamePlayHelp.displayMenu();
+        
     }
 
     private void puzzleHelpView() {
