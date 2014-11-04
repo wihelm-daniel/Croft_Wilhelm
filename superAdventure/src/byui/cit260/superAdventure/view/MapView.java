@@ -47,7 +47,7 @@ public class MapView {
             input = input.trim();
 
             if (input.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
+                System.out.println("Invalid Map - The name must not be blank");
                 continue;
             }
             break;
