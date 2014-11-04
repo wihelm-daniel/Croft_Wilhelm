@@ -96,7 +96,9 @@ public class GameMenuView {
    
 
     private void viewMap() {
-        System.out.println("\n viewMap called");
+        MapView mapMenu = new MapView();
+        mapMenu.displayMenu();
+        //System.out.println("\n viewMap called");
     }
 
     private void saveProgress() {
