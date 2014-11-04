@@ -18,7 +18,7 @@ public class ClueView {
             + "\n\tClue"
             + "\n##########################"
             + "\nChoose an item below for a clue for the game."
-            + "\nW - Weaknesses of the villains."
+            + "\nW - Weaknesses of the villain's."
             + "\nP - Power Crystal locations"
             + "\nK - Key locations"
             + "\nE - Exit the clue area"
@@ -49,7 +49,7 @@ public class ClueView {
             input = input.trim();
 
             if (input.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
+                System.out.println("Invalid Name - The name must not be blank");
                 continue;
             }
             break;
@@ -62,7 +62,7 @@ public class ClueView {
 
         switch (choice) {
             case 'W':
-                System.out.println("\nA villains weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
+                System.out.println("\nA villain's weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
                 break;
             case 'P':
                 System.out.println("\nPower crystals can be found in each map's\nlocation.");

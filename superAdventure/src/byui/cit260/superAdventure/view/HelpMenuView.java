@@ -117,7 +117,9 @@ public class HelpMenuView {
     }
 
     private void clueHelpView() {
-        System.out.println("\n clueHelpView called");
+        ClueView clueMenu = new ClueView();
+        clueMenu.displayMenu();
+        //System.out.println("\n clueHelpView called");
     }
 
     private void keyHelpView() {
