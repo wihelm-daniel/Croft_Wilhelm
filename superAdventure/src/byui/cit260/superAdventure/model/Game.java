@@ -1,10 +1,11 @@
 
 package byui.cit260.superAdventure.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Game {
+public class Game implements Serializable{
     
     private String nameOfGame;
     
