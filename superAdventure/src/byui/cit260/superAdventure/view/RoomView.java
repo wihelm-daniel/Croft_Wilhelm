@@ -66,6 +66,12 @@ public class RoomView {
     private void doAction(char choice) {
 
         switch (choice) {
+            /* Instructor: 
+             * What action should there be associated with each selection. I
+             * believe you will be need to do more than print a message. Some
+             * where their needs to be a way for the end user to interact
+             * with the item. Is that in a different view?
+             */
             case 'K':
                 System.out.println("A key is in this room? " + random.nextBoolean());
                 break;

@@ -142,6 +142,11 @@ public class MapView {
         }
     }
 
+    /* Instructor: 
+     * What is the action to be taken place as the player visits each room.
+     * You should be calling some control function or displaying some other view
+     * when they visit the room not just printing out the locaton.
+     */
     private void MapAView() {
         System.out.print("Map ");
         System.out.println("A");

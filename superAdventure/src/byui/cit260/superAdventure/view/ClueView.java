@@ -59,7 +59,10 @@ public class ClueView {
     }
 
     private void doAction(char choice) {
-
+        /* Instructor: 
+         * The action for each choice here is OK because you are really just 
+         * displaying help here. There should be no control action needed.
+         */
         switch (choice) {
             case 'W':
                 System.out.println("\nA villain's weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
