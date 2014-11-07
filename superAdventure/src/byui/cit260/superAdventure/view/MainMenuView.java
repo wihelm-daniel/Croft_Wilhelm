@@ -11,8 +11,24 @@ import superadventure.SuperAdventure;
  *
  * @author Daniel
  */
-public class MainMenuView {
-    private final String MENU = "\n" +
+public class MainMenuView extends View{
+    
+    public MainMenuView(){
+    super ("\n++++++++++++++++++++++++++++++++++++++++" +
+            "\n+              Main Menu               +" +
+            "\n++++++++++++++++++++++++++++++++++++++++" +
+            "\n+ N - New game                         +" +
+            "\n+ L - Load the game                    +" +
+            "\n+ S - Save the game                    +" +
+            "\n+ H - Get help on how to play the game +" +
+            "\n+ E - Exit                             +" +
+            "\n++++++++++++++++++++++++++++++++++++++++");
+    }
+    
+    
+    
+    
+  /*  private final String MENU = "\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
             "\n+              Main Menu               +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
@@ -38,7 +54,7 @@ public class MainMenuView {
         } while (selection != 'E');
     }
 
-    private String getInput() {
+    public String getInput() {
         boolean valid = false;
         String input = null;
         Scanner keyboard = new Scanner(System.in);
@@ -57,6 +73,7 @@ public class MainMenuView {
         
         return input;
     }
+    */
 
     private void doAction(char choice) {
         
@@ -100,5 +117,10 @@ public class MainMenuView {
         
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
