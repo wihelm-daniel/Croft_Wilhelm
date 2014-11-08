@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Daniel
  */
-public class GamePlayHelpView {
+public abstract class GamePlayHelpView extends View{
       
-        private final String MENU = "\n" +
+      public GamePlayHelpView(){ 
+        super ("\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
             "\n+       Game Play Help Categories      +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
@@ -23,9 +24,10 @@ public class GamePlayHelpView {
             "\n+ L - Loading a saved game             +" +
             "\n+ T - Treasure (clues/keys/powers)     +" +
             "\n+ Q - Quit to Help Menu                +" +
-            "\n++++++++++++++++++++++++++++++++++++++++";
+            "\n++++++++++++++++++++++++++++++++++++++++");
+      }
    
-    void displayMenu() {
+ /*   void displayMenu() {
          char selection = ' ';
         do {
             
@@ -58,6 +60,7 @@ public class GamePlayHelpView {
         
         return input;
     }
+            */
 
     private void doAction(char choice) {
         

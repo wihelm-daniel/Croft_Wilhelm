@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.superAdventure.view;
-import java.util.Scanner;
 /**
  *
  * @author Daniel
  */
-public class HelpMenuView {
-        private final String MENU = "\n" +
+public class HelpMenuView extends View{
+       
+    public HelpMenuView(){
+        super("\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
             "\n+              Help Menu               +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
@@ -23,9 +24,9 @@ public class HelpMenuView {
             "\n+ K - Keys                             +" +
             "\n+ W - Winning the game                 +" +
             "\n+ E - Exit to Main Menu                +" +
-            "\n++++++++++++++++++++++++++++++++++++++++";
+            "\n++++++++++++++++++++++++++++++++++++++++");
      
-    void displayMenu() {
+    /*void displayMenu() {
         char selection = ' ';
         do {
             
@@ -58,6 +59,7 @@ public class HelpMenuView {
         
         return input;
     }
+        */
 
     private void doAction(char choice) {
         

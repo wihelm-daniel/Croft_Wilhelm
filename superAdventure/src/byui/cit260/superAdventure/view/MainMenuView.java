@@ -5,7 +5,6 @@
  */
 package byui.cit260.superAdventure.view;
 import byui.cit260.superAdventure.control.GameControl;
-import java.util.Scanner;
 import superadventure.SuperAdventure;
 /**
  *
@@ -21,7 +20,7 @@ public class MainMenuView extends View{
             "\n+ L - Load the game                    +" +
             "\n+ S - Save the game                    +" +
             "\n+ H - Get help on how to play the game +" +
-            "\n+ E - Exit                             +" +
+            "\n+ Q - Quit                             +" +
             "\n++++++++++++++++++++++++++++++++++++++++");
     }
     
@@ -90,7 +89,7 @@ public class MainMenuView extends View{
             case 'H':
                 this.getHelp();
                 break;
-            case 'E':
+            case 'Q':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
