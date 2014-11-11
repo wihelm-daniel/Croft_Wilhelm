@@ -5,7 +5,6 @@
  */
 package byui.cit260.superAdventure.view;
 
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,23 +12,37 @@ import java.util.Scanner;
  *
  * @author Brad Croft
  */
-public class RoomView {
+public class RoomView extends View {
 
     // This will produce a random true or false for the different items in the menu.
     Random random = new Random();
 
-    private final String MENU = "\n"
-            + "\n$$$$$$$$$$$$$$$$"
-            + "\nRoom View"
-            + "\n$$$$$$$$$$$$$$$"
-            + "\nChoose an item to see if it is in the room."
-            + "\nK - Key"
-            + "\nP - Power crystal"
-            + "\nV - Villain"
-            + "\nT - Treasure Chest"
-            + "\nE - Exit";
+    /* private final String MENU = "\n"
+     + "\n$$$$$$$$$$$$$$$$"
+     + "\nRoom View"
+     + "\n$$$$$$$$$$$$$$$"
+     + "\nChoose an item to see if it is in the room."
+     + "\nK - Key"
+     + "\nP - Power crystal"
+     + "\nV - Villain"
+     + "\nT - Treasure Chest"
+     + "\nE - Exit"; */
+    public RoomView(String promptMessage) {
+        super("\n"
+                + "\n$$$$$$$$$$$$$$$$"
+                + "\nRoom View"
+                + "\n$$$$$$$$$$$$$$$"
+                + "\nChoose an item to see if it is in the room."
+                + "\nK - Key"
+                + "\nP - Power crystal"
+                + "\nV - Villain"
+                + "\nT - Treasure Chest"
+                + "\nE - Exit"
+        );
 
-    void displayMenu() {
+    }
+
+ /*   void displayMenu() {
         char selection = ' ';
         do {
 
@@ -62,7 +75,7 @@ public class RoomView {
 
         return input;
     }
-
+*/
     private void doAction(char choice) {
 
         switch (choice) {
@@ -89,6 +102,11 @@ public class RoomView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

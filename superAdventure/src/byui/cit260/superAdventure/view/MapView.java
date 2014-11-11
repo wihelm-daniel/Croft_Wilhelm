@@ -11,32 +11,25 @@ import java.util.Scanner;
  *
  * @author Brad Croft
  */
-public class MapView {
+public class MapView extends View {
 
-    private final String MENU = "\n"
-            + "\tThe Map"
-            + "The map is in a grid of a 5 x 5 square."
-            + "\n\tA\tB\tC\tD\tE"
-            + "\n\tF\tG\tH\tI\tJ"
-            + "\n\tK\tL\tM\tN\tO"
-            + "\n\tP\tQ\tR\tS\tT"
-            + "\n\tU\tV\tW\tX\tY"
-            + "\nEnter \"Z\" to exit the map";
-
-    void displayMenu() {
-        char selection = ' ';
-        do {
-
-            System.out.println(MENU);
-
-            String input = this.getInput();
-            selection = input.charAt(0);
-            this.doAction(selection);
-        } while (selection != 'Z');
-
+    
+    public MapView(String promptMessage) {
+        super("\n"
+                + "\tThe Map"
+                + "The map is in a grid of a 5 x 5 square."
+                + "\n\tA\tB\tC\tD\tE"
+                + "\n\tF\tG\tH\tI\tJ"
+                + "\n\tK\tL\tM\tN\tO"
+                + "\n\tP\tQ\tR\tS\tT"
+                + "\n\tU\tV\tW\tX\tY"
+                + "\nEnter \"Z\" to exit the map"
+        );
     }
 
-    private String getInput() {
+    
+    @Override
+    public String getInput() {
         boolean valid = false;
         String input = null;
         Scanner keyboard = new Scanner(System.in);
@@ -55,93 +48,7 @@ public class MapView {
 
         return input;
     }
-
-    private void doAction(char choice) {
-
-        switch (choice) {
-            case 'A':
-                this.MapAView();
-                break;
-            case 'B':
-                this.MapBView();
-                break;
-            case 'C':
-                this.MapCView();
-                break;
-            case 'D':
-                this.MapDView();
-                break;
-            case 'E':
-                this.MapAView();
-                break;
-            case 'F':
-                this.MapFView();
-                break;
-            case 'G':
-                this.MapGView();
-                break;
-            case 'H':
-                this.MapHView();
-                break;
-            case 'I':
-                this.MapIView();
-                break;
-            case 'J':
-                this.MapJView();
-                break;
-            case 'K':
-                this.MapKView();
-                break;
-            case 'L':
-                this.MapLView();
-                break;
-            case 'M':
-                this.MapMView();
-                break;
-            case 'N':
-                this.MapNView();
-                break;
-            case 'O':
-                this.MapOView();
-                break;
-            case 'P':
-                this.MapPView();
-                break;
-            case 'Q':
-                this.MapQView();
-                break;
-            case 'R':
-                this.MapRView();
-                break;
-            case 'S':
-                this.MapSView();
-                break;
-            case 'T':
-                this.MapTView();
-                break;
-            case 'U':
-                this.MapUView();
-                break;
-            case 'V':
-                this.MapVView();
-                break;
-            case 'W':
-                this.MapWView();
-                break;
-            case 'X':
-                this.MapXView();
-                break;
-            case 'Y':
-                this.MapYView();
-                break;
-            case 'Z':
-                return; // Some reason its not returning to the previous menu.
-            default:
-                System.out.println("\n*** Invalid selection *** Try again");
-                break;
-        }
-    }
-
+   
     /* Instructor: 
      * What is the action to be taken place as the player visits each room.
      * You should be calling some control function or displaying some other view
@@ -265,6 +172,102 @@ public class MapView {
     private void MapYView() {
         System.out.print("Map ");
         System.out.println("Y");
+    }
+
+    
+    public void doAction(char value) {
+    }
+
+    @Override
+    public void doAction(String value) {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        switch (value) {
+            case "A":
+                this.MapAView();
+                break;
+            case "B":
+                this.MapBView();
+                break;
+            case "C":
+                this.MapCView();
+                break;
+            case "D":
+                this.MapDView();
+                break;
+            case "E":
+                this.MapAView();
+                break;
+            case "F":
+                this.MapFView();
+                break;
+            case "G":
+                this.MapGView();
+                break;
+            case "H":
+                this.MapHView();
+                break;
+            case "I":
+                this.MapIView();
+                break;
+            case "J":
+                this.MapJView();
+                break;
+            case "K":
+                this.MapKView();
+                break;
+            case "L":
+                this.MapLView();
+                break;
+            case "M":
+                this.MapMView();
+                break;
+            case "N":
+                this.MapNView();
+                break;
+            case "O":
+                this.MapOView();
+                break;
+            case "P":
+                this.MapPView();
+                break;
+            case "Q":
+                this.MapQView();
+                break;
+            case "R":
+                this.MapRView();
+                break;
+            case "S":
+                this.MapSView();
+                break;
+            case "T":
+                this.MapTView();
+                break;
+            case "U":
+                this.MapUView();
+                break;
+            case "V":
+                this.MapVView();
+                break;
+            case "W":
+                this.MapWView();
+                break;
+            case "X":
+                this.MapXView();
+                break;
+            case "Y":
+                this.MapYView();
+                break;
+            case "Z":
+                return; // Some reason its not returning to the previous menu.
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+    }
+        
+        
+        
     }
 
 }
