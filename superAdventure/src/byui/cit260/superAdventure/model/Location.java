@@ -5,64 +5,65 @@
  */
 package byui.cit260.superAdventure.model;
 import java.io.Serializable;
+import java.util.Objects;
 /**
  *
  * @author Daniel
  */
 public class Location implements Serializable{
     
-    private int row;
-    private int column;
-    private boolean visted;
-    private int roomObject;
+    private int roomNumber;
+    private String objectName;
+    private char objectSymbol;
+    private int objectState;
 
     public Location() {
     }
-    
-    public int getRow() {
-        return row;
+
+    public int getRoomNumber() {
+        return roomNumber;
     }
 
-    public void setRow(int row) {
-        this.row = row;
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
-    public int getColumn() {
-        return column;
+    public String getObjectName() {
+        return objectName;
     }
 
-    public void setColumn(int column) {
-        this.column = column;
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
     }
 
-    public boolean isVisted() {
-        return visted;
+    public char getObjectSymbol() {
+        return objectSymbol;
     }
 
-    public void setVisted(boolean visted) {
-        this.visted = visted;
+    public void setObjectSymbol(char objectSymbol) {
+        this.objectSymbol = objectSymbol;
     }
 
-    public int getRoomObject() {
-        return roomObject;
+    public int getObjectState() {
+        return objectState;
     }
 
-    public void setRoomObject(int roomObject) {
-        this.roomObject = roomObject;
+    public void setObjectState(int objectState) {
+        this.objectState = objectState;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visted=" + visted + ", roomObject=" + roomObject + '}';
+        return "Location{" + "roomNumber=" + roomNumber + ", objectName=" + objectName + ", objectSymbol=" + objectSymbol + ", objectState=" + objectState + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 29 * hash + this.row;
-        hash = 29 * hash + this.column;
-        hash = 29 * hash + (this.visted ? 1 : 0);
-        hash = 29 * hash + this.roomObject;
+        hash = 79 * hash + this.roomNumber;
+        hash = 79 * hash + Objects.hashCode(this.objectName);
+        hash = 79 * hash + this.objectSymbol;
+        hash = 79 * hash + this.objectState;
         return hash;
     }
 
@@ -75,23 +76,19 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (this.row != other.row) {
+        if (this.roomNumber != other.roomNumber) {
             return false;
         }
-        if (this.column != other.column) {
+        if (!Objects.equals(this.objectName, other.objectName)) {
             return false;
         }
-        if (this.visted != other.visted) {
+        if (this.objectSymbol != other.objectSymbol) {
             return false;
         }
-        if (this.roomObject != other.roomObject) {
+        if (this.objectState != other.objectState) {
             return false;
         }
         return true;
     }
-
-   
     
-    
-
 }

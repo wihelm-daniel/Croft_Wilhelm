@@ -106,6 +106,11 @@ public class GameMenuView extends View{
        System.out.println("\n saveProgress called");
     }
 
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
 
 
