@@ -8,6 +8,18 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     private String nameOfGame;
+    private Player String playerName;
+    private Player int playerLocation;
+    
+    
+    
+    private Inventory[] inventory;
+    private InventoryArrayList[] inventory;
+    
+    private Location[] location;
+    private LocationArrayList[] location;
+    
+    
     
     
     private String numOfMaps;// @TODO - change to int data type
@@ -48,6 +60,40 @@ public class Game implements Serializable{
     public void setInventoryItemCount(String inventoryItemCount) {
         this.inventoryItemCount = inventoryItemCount;
     }
+
+    public Player getString() {
+        return String;
+    }
+
+    public void setString(Player String) {
+        this.String = String;
+    }
+
+    public int getPlayerLocation() {
+        return playerLocation;
+    }
+
+    public void setPlayerLocation(int playerLocation) {
+        this.playerLocation = playerLocation;
+    }
+
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public InventoryArrayList[] getInventory() {
+        return inventory;
+    }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public LocationArrayList[] getLocation() {
+        return location;
+    }
+    
+    
 
     @Override
     public String toString() {
