@@ -78,7 +78,7 @@ public class MainMenuView extends View{
         
         switch (choice){
             case 'N':
-                this.newGame();
+                this.startNewGame();
                 break;
             case 'L':
                 this.loadGame();
@@ -98,11 +98,11 @@ public class MainMenuView extends View{
         }
     }
 
-    private void newGame() {
+    private void startNewGame() {
        GameControl.createNewGame(SuperAdventure.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void loadGame() {
@@ -115,7 +115,7 @@ public class MainMenuView extends View{
     private void getHelp() {
         
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
     @Override

@@ -13,39 +13,38 @@ import java.util.Objects;
  * @author Daniel
  */
 public class Player implements Serializable{
-    private String name;
-    private double time;
+    private String playerName;
+    private int playerLocation;
 
     public Player() {
     }
 
-    
-    public String getName() {
-        return name;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 
-    public double getTime() {
-        return time;
+    public int getPlayerLocation() {
+        return playerLocation;
     }
 
-    public void setTime(double time) {
-        this.time = time;
+    public void setPlayerLocation(int playerLocation) {
+        this.playerLocation = playerLocation;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", time=" + time + '}';
+        return "Player{" + "playerName=" + playerName + ", playerLocation=" + playerLocation + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 71 * hash + Objects.hashCode(this.name);
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.time) ^ (Double.doubleToLongBits(this.time) >>> 32));
+        int hash = 5;
+        hash = 37 * hash + Objects.hashCode(this.playerName);
+        hash = 37 * hash + this.playerLocation;
         return hash;
     }
 
@@ -58,14 +57,16 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.playerName, other.playerName)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.time) != Double.doubleToLongBits(other.time)) {
+        if (this.playerLocation != other.playerLocation) {
             return false;
         }
         return true;
     }
+
+    
     
     
 }

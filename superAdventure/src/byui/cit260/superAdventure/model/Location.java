@@ -4,66 +4,58 @@
  * and open the template in the editor.
  */
 package byui.cit260.superAdventure.model;
-import java.io.Serializable;
-import java.util.Objects;
-/**
+
+/** 
  *
  * @author Daniel
  */
-public class Location implements Serializable{
+class Location {
     
-    private int roomNumber;
-    private String objectName;
-    private char objectSymbol;
-    private int objectState;
-
+    private int row;
+    private int column;
+    private int objectName;
+    
     public Location() {
+        this.row;
+        this.column;
+        this.objectName;    
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public int getRow() {
+        return row;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public String getObjectName() {
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public int getObjectName() {
         return objectName;
     }
 
-    public void setObjectName(String objectName) {
+    public void setObjectName(int objectName) {
         this.objectName = objectName;
     }
-
-    public char getObjectSymbol() {
-        return objectSymbol;
-    }
-
-    public void setObjectSymbol(char objectSymbol) {
-        this.objectSymbol = objectSymbol;
-    }
-
-    public int getObjectState() {
-        return objectState;
-    }
-
-    public void setObjectState(int objectState) {
-        this.objectState = objectState;
-    }
-
-    @Override
+    
+   @Override
     public String toString() {
-        return "Location{" + "roomNumber=" + roomNumber + ", objectName=" + objectName + ", objectSymbol=" + objectSymbol + ", objectState=" + objectState + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", objectName=" + objectName + '}';
     }
-
+    
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + this.roomNumber;
-        hash = 79 * hash + Objects.hashCode(this.objectName);
-        hash = 79 * hash + this.objectSymbol;
-        hash = 79 * hash + this.objectState;
+        int hash = 7;
+        hash = 89 * hash + this.row;
+        hash = 89 * hash + this.column;
+        hash = 89 * hash + this.objectName;
         return hash;
     }
 
@@ -76,19 +68,19 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (this.roomNumber != other.roomNumber) {
+        if (this.row != other.row) {
             return false;
         }
-        if (!Objects.equals(this.objectName, other.objectName)) {
+        if (this.column != other.column) {
             return false;
         }
-        if (this.objectSymbol != other.objectSymbol) {
-            return false;
-        }
-        if (this.objectState != other.objectState) {
+        if (this.objectName != other.objectName) {
             return false;
         }
         return true;
-    }
-    
+    }'
 }
+
+    void setobjectSymbol(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }

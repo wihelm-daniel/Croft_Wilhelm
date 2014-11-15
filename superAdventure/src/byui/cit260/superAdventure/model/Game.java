@@ -2,31 +2,22 @@
 package byui.cit260.superAdventure.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 
 public class Game implements Serializable{
     
     private String nameOfGame;
-    private Player String playerName;
-    private Player int playerLocation;
+    private Player playerName;
+    private Player playerLocation;
     
-    
-    
-    private Inventory[] inventory;
-    private InventoryArrayList[] inventory;
-    
-    private Location[] location;
-    private LocationArrayList[] location;
-    
-    
-    
-    
-    private String numOfMaps;// @TODO - change to int data type
-    private String roomObjects; // @TODO - change to int data type   
-    private String inventoryItemCount; // @TODO - change to int data type
-
-    public Game() {
+  
+       
+   public Game() {
+       this.nameOfGame = " ";
+       this.playerName = null;
+       this.playerLocation = null;
     }
 
     public String getNameOfGame() {
@@ -37,76 +28,51 @@ public class Game implements Serializable{
         this.nameOfGame = nameOfGame;
     }
 
-    public String getNumOfMaps() {
-        return numOfMaps;
+    public Player getPlayerName() {
+        return playerName;
     }
 
-    public void setNumOfMaps(String numOfMaps) {
-        this.numOfMaps = numOfMaps;
+    public void setPlayerName(Player playerName) {
+        this.playerName = playerName;
     }
 
-    public String getRoomObjects() {
-        return roomObjects;
-    }
-
-    public void setRoomObjects(String roomObjects) {
-        this.roomObjects = roomObjects;
-    }
-
-    public String getInventoryItemCount() {
-        return inventoryItemCount;
-    }
-
-    public void setInventoryItemCount(String inventoryItemCount) {
-        this.inventoryItemCount = inventoryItemCount;
-    }
-
-    public Player getString() {
-        return String;
-    }
-
-    public void setString(Player String) {
-        this.String = String;
-    }
-
-    public int getPlayerLocation() {
+    public Player getPlayerLocation() {
         return playerLocation;
     }
 
-    public void setPlayerLocation(int playerLocation) {
+    public void setPlayerLocation(Player playerLocation) {
         this.playerLocation = playerLocation;
-    }
-
-    public Inventory[] getInventory() {
-        return inventory;
     }
 
     public InventoryArrayList[] getInventory() {
         return inventory;
     }
 
-    public Location[] getLocation() {
-        return location;
+    public void setInventory(InventoryArrayList[] inventory) {
+        this.inventory = inventory;
     }
 
     public LocationArrayList[] getLocation() {
         return location;
     }
-    
-    
+
+    public void setLocation(LocationArrayList[] location) {
+        this.location = location;
+    }
 
     @Override
     public String toString() {
-        return "Game{" + "name=" + nameOfGame + ", maps=" + numOfMaps + ", roomObjects=" + roomObjects + ", inventoryItemCount=" + inventoryItemCount + '}';
+        return "Game{" + "nameOfGame=" + nameOfGame + ", playerName=" + playerName + ", playerLocation=" + playerLocation + ", inventory=" + inventory + ", location=" + location + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.nameOfGame);
-        hash = 37 * hash + Objects.hashCode(this.numOfMaps);
-        hash = 37 * hash + Objects.hashCode(this.roomObjects);
-        hash = 37 * hash + Objects.hashCode(this.inventoryItemCount);
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.nameOfGame);
+        hash = 97 * hash + Objects.hashCode(this.playerName);
+        hash = 97 * hash + Objects.hashCode(this.playerLocation);
+        hash = 97 * hash + Arrays.deepHashCode(this.inventory);
+        hash = 97 * hash + Arrays.deepHashCode(this.location);
         return hash;
     }
 
@@ -122,20 +88,30 @@ public class Game implements Serializable{
         if (!Objects.equals(this.nameOfGame, other.nameOfGame)) {
             return false;
         }
-        if (!Objects.equals(this.numOfMaps, other.numOfMaps)) {
+        if (!Objects.equals(this.playerName, other.playerName)) {
             return false;
         }
-        if (!Objects.equals(this.roomObjects, other.roomObjects)) {
+        if (!Objects.equals(this.playerLocation, other.playerLocation)) {
             return false;
         }
-        if (!Objects.equals(this.inventoryItemCount, other.inventoryItemCount)) {
+        if (!Arrays.deepEquals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.location, other.location)) {
             return false;
         }
         return true;
     }
 
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
-    
     
     
 }

@@ -3,7 +3,7 @@ package superadventure;
 import byui.cit260.superAdventure.model.Game;
 import byui.cit260.superAdventure.model.Inventory;
 import byui.cit260.superAdventure.model.Keys;
-import byui.cit260.superAdventure.model.Location;
+import byui.cit260.superAdventure.model.Map;
 import byui.cit260.superAdventure.model.Locks;
 import byui.cit260.superAdventure.model.Player;
 import byui.cit260.superAdventure.model.Puzzles;
@@ -54,7 +54,7 @@ public class SuperAdventure {
         System.out.println(keyInfo);
 
         //Dan
-        Location loc = new Location();
+        Map loc = new Map();
         loc.setRow(4);
         loc.setColumn(2);
         loc.setVisted(true);

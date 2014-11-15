@@ -9,53 +9,49 @@ import java.util.Objects;
 //        Inventory is analogous to a warehouse where you store items.
 public class Inventory implements Serializable{
     
-    private String item;
+    private String objectName;
+    private String description;
+    private String objectState;
     
-    //@TODO - You might want to add an attribute for description
-    
-    private int used;
-    private int quantity;
 
     public Inventory() {
+    }  
+
+    public String getObjectName() {
+        return objectName;
     }
 
-       
-    
-    public String getItem() {
-        return item;
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public String getDescription() {
+        return description;
     }
 
-    public int getUsed() {
-        return used;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setUsed(int used) {
-        this.used = used;
+    public String getObjectState() {
+        return objectState;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setObjectState(String objectState) {
+        this.objectState = objectState;
     }
 
     @Override
     public String toString() {
-        return "Inventory{" + "item=" + item + ", used=" + used + ", quantity=" + quantity + '}';
+        return "Inventory{" + "objectName=" + objectName + ", description=" + description + ", objectState=" + objectState + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.item);
-        hash = 71 * hash + this.used;
-        hash = 71 * hash + this.quantity;
+        hash = 67 * hash + Objects.hashCode(this.objectName);
+        hash = 67 * hash + Objects.hashCode(this.description);
+        hash = 67 * hash + Objects.hashCode(this.objectState);
         return hash;
     }
 
@@ -68,21 +64,20 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (!Objects.equals(this.item, other.item)) {
+        if (!Objects.equals(this.objectName, other.objectName)) {
             return false;
         }
-        if (this.used != other.used) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (this.quantity != other.quantity) {
+        if (!Objects.equals(this.objectState, other.objectState)) {
             return false;
         }
         return true;
     }
-    
-    
-    
+
    
-    
+
+  
     
 }

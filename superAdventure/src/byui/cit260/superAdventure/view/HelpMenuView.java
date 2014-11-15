@@ -8,7 +8,7 @@ package byui.cit260.superAdventure.view;
  *
  * @author Daniel
  */
-public abstract class HelpMenuView extends View{
+public class HelpMenuView extends View{
        
     public HelpMenuView(){
         super("\n" +
