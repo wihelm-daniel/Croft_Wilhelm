@@ -6,6 +6,7 @@
 package byui.cit260.superAdventure.control;
 
 import byui.cit260.superAdventure.model.Map;
+import java.util.Arrays;
 
 /**
  *
@@ -13,20 +14,23 @@ import byui.cit260.superAdventure.model.Map;
  */
 public class MapControl {
 
-   private static Map createMap() {
-       
-       Map map = new Map(5,5);
-       
-       Scene[] scenes = createScenes();
-       
-       GameControl.assignSceneToLocations(mao, scenes);
-       
-       return map;
+    private static Map createMap() {
+
+        Map map = new Map(5, 5);
+
+        Scene[] scenes = createScenes();
+
+        GameControl.assignSceneToLocations(map, scenes);
+
+        // Added by Brad
+        Arrays.sort(scenes);
+
+        return map;
+
     }
-    
 
     static void movePlayerToStartingLocation(Map map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
