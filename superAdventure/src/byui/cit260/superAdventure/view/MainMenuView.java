@@ -20,61 +20,13 @@ public class MainMenuView extends View{
             "\n+ L - Load the game                    +" +
             "\n+ S - Save the game                    +" +
             "\n+ H - Get help on how to play the game +" +
+            "\n+ O - List the Objects in the game     +" +
             "\n+ Q - Quit                             +" +
             "\n++++++++++++++++++++++++++++++++++++++++");
     }
     
     
-    
-    
-  /*  private final String MENU = "\n" +
-            "\n++++++++++++++++++++++++++++++++++++++++" +
-            "\n+              Main Menu               +" +
-            "\n++++++++++++++++++++++++++++++++++++++++" +
-            "\n+ N - New game                         +" +
-            "\n+ L - Load the game                    +" +
-            "\n+ S - Save the game                    +" +
-            "\n+ H - Get help on how to play the game +" +
-            "\n+ E - Exit                             +" +
-            "\n++++++++++++++++++++++++++++++++++++++++";
-   
-    
-    public void displayMenu() {
-        char selection = ' ';
-        do {
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        } while (selection != 'E');
-    }
-
-    public String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
-            System.out.println("Enter your menu choice.");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
-                continue;
-                }
-            break;
-        }
-        
-        return input;
-    }
-    */
-
-    private void doAction(char choice) {
+       private void doAction(char choice) {
         
         switch (choice){
             case 'N':
@@ -88,6 +40,8 @@ public class MainMenuView extends View{
                 break;
             case 'H':
                 this.getHelp();
+            case 'O';
+                this.listRoomObject();
                 break;
             case 'Q':
                 return;
@@ -121,5 +75,9 @@ public class MainMenuView extends View{
     @Override
     public void doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void listRoomObject() {
+        RoomObject.listRoomObjects();
     }
 }

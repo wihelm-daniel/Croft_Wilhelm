@@ -30,12 +30,7 @@ public enum RoomObject implements Serializable {
     Puzzle5("Puzzle Five", 'P', 1, 64, "triangle"),
     Puzzle6("Puzzle Six", 'P', 1, 64, "crisscross"),
     Puzzle7("Puzzle Seven", 'P', 1, 64, "diamond"),
-    Puzzle8("Puzzle Eight", 'P'),;
-
-    public static RoomObject[] fillMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-1, 64, "hexagon"),
+    Puzzle8("Puzzle Eight", 'P', 1, 64, "hexagon"),
     Chest1("Treasure Chest One", 'C', 1, 64, "heat"), // objectSymbod, puzzle answer low and high range and the power crystal awarded when you win the Treasure Chest game.
     Chest2("Treasure Chest Two", 'C', 1, 64, "cold"),
     Chest3("Treasure Chest Three", 'C', 1, 64, "water"),
@@ -44,7 +39,8 @@ public enum RoomObject implements Serializable {
     Chest6("Treasure Chest Six", 'C', 1, 64, "soda"),
     Chest7("Treasure Chest Seven", 'C', 1, 64, "fusion"),
     Chest8("Treasure Chest Eight", 'C', 1, 64, "coldFusion");
-
+    
+    
     
     private final String objectName;
     private final char objectSymbol;
@@ -58,8 +54,18 @@ public enum RoomObject implements Serializable {
         this.objectSymbol = objectSymbol;
         this.lowRange = lowRange;
         this.highRange = highRange;
-        this.reward = reward;
+        this.reward = reward
+                
+    public listRoomObjects() {
+        for(int i: RoomObject){
+        System.out.println(i);
+        System.out.println(", ");
+        }
+    }
     }
 
+    
+    
+    
    
 }
