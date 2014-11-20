@@ -56,12 +56,13 @@ public enum RoomObject implements Serializable {
         this.highRange = highRange;
         this.reward = reward
                 
+    
+    }
     public listRoomObjects() {
         for(int i: RoomObject){
         System.out.println(i);
         System.out.println(", ");
         }
-    }
     }
 
     
