@@ -5,6 +5,7 @@
  */
 package byui.cit260.superAdventure.view;
 import byui.cit260.superAdventure.control.GameControl;
+import byui.cit260.superAdventure.model.RoomObject;
 import superadventure.SuperAdventure;
 /**
  *
