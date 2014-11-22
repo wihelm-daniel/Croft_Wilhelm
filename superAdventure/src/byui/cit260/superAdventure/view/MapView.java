@@ -5,6 +5,7 @@
  */
 package byui.cit260.superAdventure.view;
 
+import byui.cit260.superAdventure.model.RoomObject;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,6 @@ import java.util.Scanner;
  */
 public class MapView extends View {
 
-    
     public MapView(String promptMessage) {
         super("\n"
                 + "\tThe Map"
@@ -21,13 +21,12 @@ public class MapView extends View {
                 + "\n\tA\tB\tC\tD\tE"
                 + "\n\tF\tG\tH\tI\tJ"
                 + "\n\tK\tL\tM\tN\tO"
-                + "\n\tP\tQ\tR\tS\tT"
-                + "\n\tU\tV\tW\tX\tY"
-                + "\nEnter \"Z\" to exit the map"
+                + "\n\tP\tR\tS\tT\tU"
+                + "\n\tV\tW\tX\tY\tZ"
+                + "\nEnter \"Q\" to exit the map"
         );
     }
 
-    
     @Override
     public String getInput() {
         boolean valid = false;
@@ -48,7 +47,7 @@ public class MapView extends View {
 
         return input;
     }
-   
+
     /* Instructor: 
      * What is the action to be taken place as the player visits each room.
      * You should be calling some control function or displaying some other view
@@ -57,131 +56,176 @@ public class MapView extends View {
     private void MapAView() {
         System.out.print("Map ");
         System.out.println("A");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Icee);
     }
 
     private void MapBView() {
         System.out.print("Map ");
         System.out.println("B");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Hottron);
     }
 
     private void MapCView() {
         System.out.print("Map ");
         System.out.println("C");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest4);
     }
 
     private void MapDView() {
         System.out.print("Map ");
         System.out.println("E");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle1);
     }
 
     private void MapFView() {
         System.out.print("Map ");
         System.out.println("F");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Acidface);
     }
 
     private void MapGView() {
         System.out.print("Map ");
         System.out.println("G");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest8);
     }
 
     private void MapHView() {
         System.out.print("Map ");
         System.out.println("H");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle7);
     }
 
     private void MapIView() {
         System.out.print("Map ");
         System.out.println("I");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.LakeBoy);
     }
 
     private void MapJView() {
         System.out.print("Map ");
         System.out.println("J");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.FlameBoy);
     }
 
     private void MapKView() {
         System.out.print("Map ");
         System.out.println("K");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle2);
     }
 
     private void MapLView() {
         System.out.print("Map ");
         System.out.println("L");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest7);
     }
 
     private void MapMView() {
         System.out.print("Map ");
         System.out.println("M");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Neutron);
     }
 
     private void MapNView() {
         System.out.print("Map ");
         System.out.println("N");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest6);
     }
 
     private void MapOView() {
         System.out.print("Map ");
         System.out.println("O");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle6);
     }
 
     private void MapPView() {
         System.out.print("Map ");
         System.out.println("P");
-    }
-
-    private void MapQView() {
-        System.out.print("Map ");
-        System.out.println("Q");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest3);
     }
 
     private void MapRView() {
         System.out.print("Map ");
         System.out.println("R");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Stoneface);
     }
 
     private void MapSView() {
         System.out.print("Map ");
         System.out.println("S");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.PlanetGuy);
     }
 
     private void MapTView() {
         System.out.print("Map ");
         System.out.println("T");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle4);
     }
 
     private void MapUView() {
         System.out.print("Map ");
         System.out.println("U");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle5);
     }
 
     private void MapVView() {
         System.out.print("Map ");
         System.out.println("V");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest1);
     }
 
     private void MapWView() {
         System.out.print("Map ");
         System.out.println("W");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle8);
     }
 
     private void MapXView() {
         System.out.print("Map ");
         System.out.println("X");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest2);
     }
 
     private void MapYView() {
         System.out.print("Map ");
         System.out.println("Y");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Chest5);
     }
 
-    
+    private void MapZView() {
+        System.out.print("Map ");
+        System.out.println("Z");
+        System.out.println("In this room you found: ");
+        System.out.println(RoomObject.Puzzle3);
+    }
+
     public void doAction(char value) {
     }
 
     @Override
     public void doAction(String value) {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
         switch (value) {
             case "A":
                 this.MapAView();
@@ -231,9 +275,6 @@ public class MapView extends View {
             case "P":
                 this.MapPView();
                 break;
-            case "Q":
-                this.MapQView();
-                break;
             case "R":
                 this.MapRView();
                 break;
@@ -259,15 +300,14 @@ public class MapView extends View {
                 this.MapYView();
                 break;
             case "Z":
-                return; // Some reason its not returning to the previous menu.
+                this.MapZView();
+                break;
+            case "Q":
+                return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-    }
-        
-        
-        
     }
 
 }

@@ -54,11 +54,11 @@ public enum RoomObject implements Serializable {
         this.objectSymbol = objectSymbol;
         this.lowRange = lowRange;
         this.highRange = highRange;
-        this.reward = reward
+        this.reward = reward;
                 
     
     }
-    public listRoomObjects() {
+    public void listRoomObjects() {
         for(int i: RoomObject){
         System.out.println(i);
         System.out.println(", ");

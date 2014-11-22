@@ -108,6 +108,10 @@ public class HelpMenuView extends View{
     
     private void TreasureHelpView() {
         System.out.println("\n TreasureHelpView called");
+        // Added by Brad
+        TreasureView treasureView = new TreasureView();
+        treasureView.displayTreasure();
+        // End of Brad's additions
     }
    
     private void villainsView() {
