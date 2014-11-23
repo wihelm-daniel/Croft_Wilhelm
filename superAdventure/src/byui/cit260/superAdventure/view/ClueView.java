@@ -64,20 +64,58 @@ public class ClueView {
          * displaying help here. There should be no control action needed.
          */
         switch (choice) {
-            case 'W':
-                System.out.println("\nA villain's weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
+            case 'W': // Choice 1
+                System.out.println("Answer the following question for a clue to be revealed.");
+                System.out.println("What is the area of of a square with a base of 5 and a height of 4?");
+
+                // Get the input from the user, trim any leading or trailing spaces
+                String inputWeakness = null;
+                Scanner keyboardWeakness = new Scanner(System.in);
+                inputWeakness = keyboardWeakness.nextLine();
+                inputWeakness = inputWeakness.trim();
+
+                if (inputWeakness == "20") {
+                    System.out.println("\nA villain's weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
+                } else {
+                    System.out.println("Try again");
+                }
                 break;
-            case 'P':
-                System.out.println("\nPower crystals can be found in each map's\nlocation.");
+            case 'P': // Choice 2
+                System.out.println("Answer the following question for a clue to be revealed.");
+                System.out.println("What is the area of of a triangle with a base of 6 and a height of 4?");
+
+                // Get the input from the user, trim any leading or trailing spaces
+                String inputPowerCrystal = null;
+                Scanner keyboardPowerCrystal = new Scanner(System.in);
+                inputPowerCrystal = keyboardPowerCrystal.nextLine();
+                inputPowerCrystal = inputPowerCrystal.trim();
+
+                if (inputPowerCrystal == "12") {
+                    System.out.println("\nPower crystals can be found in each map's\nlocation.");
+                } else {
+                    System.out.println("Try again");
+                }
                 break;
-            case 'K':
-                System.out.println("\nKeys are found only in even numbered rooms.");
+            case 'K': // Choice 3
+                System.out.println("Answer the following question for a clue to be revealed.");
+                System.out.println("What is the approximate circumference of a circle, with a diameter of 100?");
+
+                // Get the input from the user, trim any leading or trailing spaces
+                String inputKey = null;
+                Scanner keyboardKey = new Scanner(System.in);
+                inputKey = keyboardKey.nextLine();
+                inputKey = inputKey.trim();
+
+                if (inputKey == "314") {
+                    System.out.println("\nKeys are found only in even numbered rooms.");
+                } else {
+                    System.out.println("Try again");
+                }
+
             case 'E':
                 return;
             default:
                 System.out.println("\nInvalid selection, please try again");
         }
-
     }
-
 }
