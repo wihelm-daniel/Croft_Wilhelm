@@ -6,6 +6,7 @@
 package byui.cit260.superAdventure.model;
 import byui.cit260.superAdventure.control.MapControl;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 import javax.swing.ImageIcon;
 /**
@@ -172,7 +173,7 @@ public class Map implements Serializable{
        finish
    }
    
-   private static void assignScenesToLocations(Map map, Scene[] scense) {
+   private static void assignScenesToLocations(Map map, Scene[] scenes) {
        Location[][] locations = map.getLocations();
        
        locations [0][0].setScene(scenes[SceneType.start.ordinal()]);
@@ -181,7 +182,7 @@ public class Map implements Serializable{
        locations [0][3].setScene(scenes[SceneType.chest2.ordinal()]);
        locations [0][4].setScene(scenes[SceneType.villain2.ordinal()]);
        locations [1][0].setScene(scenes[SceneType.puzzle1.ordinal()]);
-       locations [1][1].setScene(scenes[SceneType.chest3.o3rdinal()]);
+       locations [1][1].setScene(scenes[SceneType.chest3.ordinal()]);
        locations [1][2].setScene(scenes[SceneType.villain4.ordinal()]);
        locations [1][3].setScene(scenes[SceneType.puzzle8.ordinal()]);
        locations [1][4].setScene(scenes[SceneType.chest5.ordinal()]);
@@ -199,7 +200,11 @@ public class Map implements Serializable{
        locations [4][1].setScene(scenes[SceneType.chest4.ordinal()]);
        locations [4][2].setScene(scenes[SceneType.villain5.ordinal()]);
        locations [4][3].setScene(scenes[SceneType.puzzle6.ordinal()]);
-       locations [4][4].setScene(scenes[SceneType.chest8.ordinal()])
+       locations [4][4].setScene(scenes[SceneType.chest8.ordinal()]);
+       
+   }
+   public static String getSorted(){
+       return Arrays.sort(locations);;
    }
 }
-}
+
