@@ -6,6 +6,7 @@
 package byui.cit260.superAdventure.control;
 
 import byui.cit260.superAdventure.model.Map;
+import byui.cit260.superAdventure.model.Player;
 import java.util.Arrays;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Arrays;
  */
 public class MapControl {
 
-    private static Map createMap() {
+    private static Map createMap() throws MapControlException{
 
         Map map = new Map(5, 5);
 
@@ -29,8 +30,23 @@ public class MapControl {
 
     }
 
-    static void movePlayerToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    
+    public static void movePlayerToLocation(Player player, Point coordinates)
+            throws MapContolExcpetion {
+                        
+        Map map = SuperAdventure.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow < 0 || newRow >= map.getNoOfRows() || newColumn < 0 || 
+                newColumn >= map.getNoOfColumns()) {
+            throw new MapControlException("Can not move actor to location"
+                                        + coordinates.x + "' " + coordinates.y
+                                        + " because that location is outside"
+                                        + " the bounds of the map.");
+        }
+        
     }
 
 }

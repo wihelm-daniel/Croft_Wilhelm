@@ -37,8 +37,13 @@ public class SuperAdventure {
         
         
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.startProgram();
-
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.startProgram();
+       }
         //Dan
         Player playerOne = new Player();
         playerOne.setName("Fred Flinstone");

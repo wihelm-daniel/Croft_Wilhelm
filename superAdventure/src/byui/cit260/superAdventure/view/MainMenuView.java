@@ -41,7 +41,7 @@ public class MainMenuView extends View{
                 break;
             case 'H':
                 this.getHelp();
-            case 'O';
+            case 'O':
                 this.listRoomObject();
                 break;
             case 'Q':

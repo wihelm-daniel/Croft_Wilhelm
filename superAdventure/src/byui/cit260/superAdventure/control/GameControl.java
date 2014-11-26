@@ -31,8 +31,9 @@ public class GameControl {
 
         RoomObject[] roomObject = RoomObject.fillMap();
 
-        MapControl.movePlayerToStartingLocation(map);
-
+        MapControl.movePlayerToStartingLocation(player, coordinates);
+            
+            
     }
 
     public static InventoryItem[] createInventoryList() {
