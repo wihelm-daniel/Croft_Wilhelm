@@ -6,7 +6,6 @@ import byui.cit260.superAdventure.model.Keys;
 import byui.cit260.superAdventure.model.Map;
 import byui.cit260.superAdventure.model.Locks;
 import byui.cit260.superAdventure.model.Player;
-import byui.cit260.superAdventure.model.Puzzles;
 import byui.cit260.superAdventure.model.RoomObject;
 import byui.cit260.superAdventure.model.Villains;
 import byui.cit260.superAdventure.view.StartProgramView;
