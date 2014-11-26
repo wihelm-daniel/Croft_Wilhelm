@@ -5,6 +5,7 @@
  */
 package byui.cit260.superAdventure.view;
 
+import byui.cit260.superAdventure.model.Map;
 import java.util.Scanner;
 
 /**
@@ -19,12 +20,35 @@ public class ClueView {
             + "\n##########################"
             + "\nChoose an item below for a clue for the game."
             + "\nW - Weaknesses of the villain's."
-            + "\nP - Power Crystal locations"
-            + "\nK - Key locations"
+            + "\nT - Treasure chest locations"
+            + "\nP - Puzzle locations"
             + "\nE - Exit the clue area"
             + "";
 
     void displayMenu() {
+
+        // Clue Game, guess a number between 1 and 100
+        Scanner keyboard = new Scanner(System.in);
+
+        int a = 1 + (int) (Math.random() * 99);
+        int guess;
+
+        System.out.println("Guess my number to display the clues.");
+        guess = keyboard.nextInt();
+
+        while (guess != a) {
+            if (guess > a) {
+                System.out.println("Guess lower.");
+
+            } else if (guess < a) {
+                System.out.println("Guess higher.");
+
+            } else {
+                System.out.println("Congratulations, you guessed right, now the Clues will be displayed.");
+            }
+        }
+
+        // End clue game
         char selection = ' ';
         do {
             System.out.println(MENU);
@@ -65,53 +89,15 @@ public class ClueView {
          */
         switch (choice) {
             case 'W': // Choice 1
-                System.out.println("Answer the following question for a clue to be revealed.");
-                System.out.println("What is the area of of a square with a base of 5 and a height of 4?");
-
-                // Get the input from the user, trim any leading or trailing spaces
-                String inputWeakness = null;
-                Scanner keyboardWeakness = new Scanner(System.in);
-                inputWeakness = keyboardWeakness.nextLine();
-                inputWeakness = inputWeakness.trim();
-
-                if (inputWeakness == "20") {
-                    System.out.println("\nA villain's weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
-                } else {
-                    System.out.println("Try again");
-                }
+                System.out.println("\nA villain's weakness is through their stomach.\nOffer them something to eat and they will\nignore you.");
                 break;
-            case 'P': // Choice 2
-                System.out.println("Answer the following question for a clue to be revealed.");
-                System.out.println("What is the area of of a triangle with a base of 6 and a height of 4?");
-
-                // Get the input from the user, trim any leading or trailing spaces
-                String inputPowerCrystal = null;
-                Scanner keyboardPowerCrystal = new Scanner(System.in);
-                inputPowerCrystal = keyboardPowerCrystal.nextLine();
-                inputPowerCrystal = inputPowerCrystal.trim();
-
-                if (inputPowerCrystal == "12") {
-                    System.out.println("\nPower crystals can be found in each map's\nlocation.");
-                } else {
-                    System.out.println("Try again");
-                }
+            case 'T': // Choice 2
+                System.out.println("\nPower crystals can be found in each map's\nlocation.");
                 break;
-            case 'K': // Choice 3
-                System.out.println("Answer the following question for a clue to be revealed.");
-                System.out.println("What is the approximate circumference of a circle, with a diameter of 100?");
-
-                // Get the input from the user, trim any leading or trailing spaces
-                String inputKey = null;
-                Scanner keyboardKey = new Scanner(System.in);
-                inputKey = keyboardKey.nextLine();
-                inputKey = inputKey.trim();
-
-                if (inputKey == "314") {
-                    System.out.println("\nKeys are found only in even numbered rooms.");
-                } else {
-                    System.out.println("Try again");
-                }
-
+            case 'P': // Choice 3
+                System.out.println("\nPuzzles are found only in even numbered rooms.");
+              System.out.println(Map.
+                break;
             case 'E':
                 return;
             default:
