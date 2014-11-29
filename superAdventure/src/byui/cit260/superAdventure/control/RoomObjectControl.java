@@ -1,28 +1,21 @@
 package byui.cit260.superAdventure.control;
 
+import byui.cit260.superAdventure.exceptions.RoomObjectControlException;
+
 public class RoomObjectControl {
     
     //Check Puzzle Answer funtion by Dan
     
-public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHigh) {
+public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHigh) throws
+        new RoomObjectControlException {
 
-        if (radius < 1) {
-            System.out.println("Enter a number between 1 and 8");
-            return 1;
+        if (radius < 1 || radius > 8 || height < 1 || height > 1) {
+            throw new RoomObjectControlException("\n Please enter integers between" +
+                                                  " 1 and 8."); 
+            
         }
-        if (radius > 8) {
-            System.out.println("Enter a number between 1 and 8");
-            return 1;
-        }
+      
         
-        if (height < 1) {
-            System.out.println("Enter a number between 1 and 8");
-            return 1;
-        }
-        if (height > 8) {
-            System.out.println("Enter a number between 1.0 and 8.0");
-            return 1;
-        }
         int volume = (int) Math.PI *((int)Math.pow(radius, 2)* height);        
         
         if (volume >= volumeLow && volume <= volumeHigh) {
@@ -45,20 +38,20 @@ public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHi
     public int checkLockCover(int radius, int height, int volumeLow, int volumeHigh) {
 
         if (radius < 1) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
         if (radius > 8) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
         
         if (height < 1) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
         if (height > 8) {
-            System.out.println("Enter a number between 1.0 and 8.0");
+            System.out.println("Enter a number between 1 and 8");
             return -1;
         }
                 
