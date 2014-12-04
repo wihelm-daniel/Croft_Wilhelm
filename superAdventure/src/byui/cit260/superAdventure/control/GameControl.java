@@ -10,12 +10,19 @@ import byui.cit260.superAdventure.model.Map;
 import byui.cit260.superAdventure.model.Player;
 import byui.cit260.superAdventure.model.RoomObject;
 import superadventure.SuperAdventure;
-
+import byui.cit260.superAdventure.exceptions.GameControlException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 /**
  *
- * @author Daniel
+ * @author Daniel Entire file
  */
 public class GameControl {
+    private static String filepath;
 
     public static void createNewGame(Player player) {
         Game game = new Game();
@@ -235,6 +242,38 @@ public class GameControl {
         }
         return inventoryList;
     } // End of Brad's addition
+
+    public static void saveGame(Game Game, String filePath) 
+        throws GameControlException {
+        
+        try(FileOutputStream fops = new FileOutputStream(filepath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }catch(IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getSavedGame(String filepath) 
+                throws GameControlException {
+        
+       Game game = null;
+       
+       try(FileInputStream fips = new FileInputStream(filepath)){
+           ObjectInputStream output = new ObjectInputStream(fips);
+           
+           game = (Game) output.readObject();
+       } 
+       catch(FileNotFoundException fnfe){
+           throw new GameControlException(fnfe.getMessage());
+       } 
+       catch(Exception e){
+           throw new GameControlException(e.getMessage());
+       }
+        
+       SuperAdventure.setCurrentGame(game);
+    }
 
     public enum Item {
 

@@ -9,7 +9,7 @@ import byui.cit260.superAdventure.model.RoomObject;
 import superadventure.SuperAdventure;
 /**
  *
- * @author Daniel
+ * @author Daniel (Entire file)
  */
 public class MainMenuView extends View{
     
@@ -26,15 +26,18 @@ public class MainMenuView extends View{
             "\n++++++++++++++++++++++++++++++++++++++++");
     }
     
-    
-       private void doAction(char choice) {
+    @Override
+       public boolean doAction(String value) {
+           
+           value = value.toUpperCase();
+           char choice = value.charAt(0);
         
         switch (choice){
             case 'N':
                 this.startNewGame();
                 break;
             case 'L':
-                this.loadGame();
+                this.startSavedGame();
                 break;
             case 'S':
                 this.saveGame();
@@ -45,12 +48,14 @@ public class MainMenuView extends View{
                 this.listRoomObject();
                 break;
             case 'Q':
-                return;
+                return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display("MainMenuView",
+                        "*** Invalid selection *** Try again");
                 break;
             
         }
+        return false;
     }
 
     private void startNewGame() {
@@ -60,12 +65,33 @@ public class MainMenuView extends View{
         gameMenu.display();
     }
 
-    private void loadGame() {
-        System.out.println("\n*** loadGame called ***");
-    }
+     private void startSavedGame() {
+        System.out.println("\n\nEnter the file path for the file where the game "
+                         + "was saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = GameMenuView();
+        gameMenu.display();
+     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame called ***");
+        System.out.println("\n\nEnter the file path for file where the game "
+                        + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+            GameControl.saveGame(SuperAdventure.getCurrentGame(), filePath);
+        }
+        catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
     private void getHelp() {
         
@@ -81,4 +107,10 @@ public class MainMenuView extends View{
     private void listRoomObject() {
         RoomObject.listRoomObjects();
     }
+
+    private GameMenuView GameMenuView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }

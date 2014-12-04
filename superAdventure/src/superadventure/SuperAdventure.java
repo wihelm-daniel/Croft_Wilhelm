@@ -9,12 +9,48 @@ import byui.cit260.superAdventure.model.Player;
 import byui.cit260.superAdventure.model.RoomObject;
 import byui.cit260.superAdventure.model.Villains;
 import byui.cit260.superAdventure.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SuperAdventure {
     
-    private static  Game currentGame = null;
+     
+    private static Game currentGame = null;
     private static Player player = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        SuperAdventure.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        SuperAdventure.logFile = logFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        SuperAdventure.outFile = outFile;
+    }
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -31,10 +67,33 @@ public class SuperAdventure {
         SuperAdventure.player = player;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {     
+        
+        try {
+            SuperAdventure.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            
+            SuperAdventure.outFile =
+                    new PrintWriter(System.out, true);
+            
+            String filePath = "log.txt";
+            SuperAdventure.logFile = new PrintWriter(filePath);
         
         
+        } catch (Exception e){
         
+        }
+        
+        finally {
+            try {
+                SuperAdventure.inFile.close();
+                SuperAdventure.outFile.close();
+                SuperAdventure.logFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+            }
+            
+        }
         StartProgramView startProgramView = new StartProgramView();
         try {
         startProgramView.startProgram();

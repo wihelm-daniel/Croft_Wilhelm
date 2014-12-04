@@ -5,18 +5,27 @@
  */
 package byui.cit260.superAdventure.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import superadventure.SuperAdventure;
 
 /**
  *
- * @author Brad Croft
+ * @author Brad Croft | fixed and update by Dan Wilhelm
  */
 public abstract class View implements ViewInterface {
 
-    private String promptMessage;
+    private String message;
+    
+    protected final BufferedReader keyboard = SuperAdventure.getInFile();
+    protected final PrintWriter console = SuperAdventure.getOutFile();
 
     public View(String promptMessage) {
-        this.promptMessage = promptMessage;
+        this.message = promptMessage;
     }
 
     @Override
@@ -25,7 +34,7 @@ public abstract class View implements ViewInterface {
 
         do {
 
-            System.out.println(this.promptMessage); // display the prompt
+            this.console.println(this.message); // display the prompt
             value = this.getInput(); // get the user's selection
             this.doAction(value); // do action based on selection
 
@@ -35,7 +44,6 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
 
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String selection = null;
 
@@ -45,16 +53,24 @@ public abstract class View implements ViewInterface {
             //prompt for the palyer's name
             System.out.println("\t\nEnter your selection below.");
 
-            //get the value entered from the keyboard
-            selection = keyboard.nextLine();
+            try {
+                //get the value entered from the keyboard
+                selection = this.keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             selection = selection.trim();
 
             if (selection.length() < 1) {  // blank value entered
-                System.out.println("\n*** Invaild Selection, please try again. ***");
+                ErrorView.display(this.getClass().getName(),
+                        "YOu mus enter a value");
                 continue;
             }
             break;
-        }
-        return selection;
+        } catch (Excpetion e) {
+                ErrorView.display(this.getClass().getName(),
+                        "Error reading inoput" + e.getMessage());
+                  
+        return null;
     }
 }
