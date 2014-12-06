@@ -1,8 +1,28 @@
 package byui.cit260.superAdventure.control;
 
 import byui.cit260.superAdventure.exceptions.RoomObjectControlException;
+import byui.cit260.superAdventure.model.RoomObject;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.PrintStream;
+
+// Enitre class by Dan Wilhelm accept where noted. 
 
 public class RoomObjectControl {
+
+    public static void saveList(RoomObject roomObject, String filePath) 
+             throws RoomObjectControlException {
+       
+        try(PrintStream ps = new PrintStream(filePath)){
+           ObjectOutputStream output = new ObjectOutputStream(ps); 
+           
+           output.writeObject(roomObject);
+        }
+        catch(IOException e){
+            throw new RoomObjectControlException(e.getMessage());
+        }
+    }
+
     
     //Check Puzzle Answer funtion by Dan
     

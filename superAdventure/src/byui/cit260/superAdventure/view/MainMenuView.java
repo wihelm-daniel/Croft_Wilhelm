@@ -5,6 +5,7 @@
  */
 package byui.cit260.superAdventure.view;
 import byui.cit260.superAdventure.control.GameControl;
+import byui.cit260.superAdventure.control.RoomObjectControl;
 import byui.cit260.superAdventure.model.RoomObject;
 import superadventure.SuperAdventure;
 /**
@@ -99,18 +100,21 @@ public class MainMenuView extends View{
         helpMenu.display();
     }
 
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     private void listRoomObject() {
-        RoomObject.listRoomObjects();
+       System.out.println("0\n\nEnter the file path to save list to.");
+       String filePath = this.getInput();
+       
+       try {
+            RoomObjectControl.saveList(RoomObject.RoomObject<>, filePath), filePath)filePath);
+       } catch (Exception ex){
+           ErrorView.display("MainMenuVeiw - listRoomObject", ex.getMessage());
+       }
+               
+               
     }
 
-    private GameMenuView GameMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
    
 }

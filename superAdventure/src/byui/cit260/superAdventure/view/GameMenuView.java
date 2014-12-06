@@ -24,40 +24,8 @@ public class GameMenuView extends View{
             "\n+ Q - Quit to Main Menu                +" +
             "\n++++++++++++++++++++++++++++++++++++++++");
           }
-   /* void displayMenu() {
-         char selection = ' ';
-        do {
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        } while (selection != 'Q');
-    }
+   
 
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
-            System.out.println("Enter your menu choice.");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
-                continue;
-                }
-            break;
-        }
-        
-        return input;
-    }
-*/
     private void doAction(char choice) {
         
         switch (choice){

@@ -27,6 +27,10 @@ public class MapView extends View {
         );
     }
 
+    MapView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public String getInput() {
         boolean valid = false;
@@ -308,6 +312,10 @@ public class MapView extends View {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+    }
+
+    void displayMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
