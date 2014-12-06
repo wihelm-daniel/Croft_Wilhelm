@@ -9,27 +9,25 @@ package byui.cit260.superAdventure.exceptions;
  *
  * @author Daniel
  */
-public class GameControlException extends Exception{
+public class InventoryControlException extends Exception{
 
-    public GameControlException() {
+    public InventoryControlException() {
     }
 
-    public GameControlException(String message) {
+    public InventoryControlException(String message) {
         super(message);
     }
 
-    public GameControlException(String message, Throwable cause) {
+    public InventoryControlException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public GameControlException(Throwable cause) {
+    public InventoryControlException(Throwable cause) {
         super(cause);
     }
 
-    public GameControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public InventoryControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-
-  
     
 }
