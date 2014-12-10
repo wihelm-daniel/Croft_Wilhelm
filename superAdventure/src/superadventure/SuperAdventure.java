@@ -78,7 +78,12 @@ public class SuperAdventure {
             
             String filePath = "log.txt";
             SuperAdventure.logFile = new PrintWriter(filePath);
-        
+            
+            /* Instructor: 
+             * Move these lines here
+             * StartProgramView spv = new StartProgramView();
+             * spv.startProgram();
+             */
         
         } catch (Exception e){
         
@@ -94,6 +99,9 @@ public class SuperAdventure {
             }
             
         }
+        /* Instructor: 
+         * Delete these lines here 
+         */
         StartProgramView startProgramView = new StartProgramView();
         try {
         startProgramView.startProgram();
@@ -102,6 +110,8 @@ public class SuperAdventure {
             te.printStackTrace();
             startProgramView.startProgram();
        }
+        
+        
         //Dan
         Player playerOne = new Player();
         playerOne.setName("Fred Flinstone");
@@ -109,6 +119,12 @@ public class SuperAdventure {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
 
+        
+        /* Instructor: 
+         * All code related to creating objects for the game should be placed in
+         * the createNewGame()in the GameControl class.
+         */
+        
         //Brad
         Keys keysOne = new Keys();
         keysOne.setKeyShape("Circle");

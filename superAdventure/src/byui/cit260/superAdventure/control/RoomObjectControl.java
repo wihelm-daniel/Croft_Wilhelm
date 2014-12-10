@@ -38,6 +38,10 @@ public int checkPuzzleAnswer(int radius, int height, int volumeLow, int volumeHi
         
         int volume = (int) Math.PI *((int)Math.pow(radius, 2)* height);        
         
+        /* Instructor: 
+         * Control Layer functions should never print to the console. This is the
+         * job of the control layer.
+         */
         if (volume >= volumeLow && volume <= volumeHigh) {
             System.out.println("Correct! You're so awesome!");
             return 0;
